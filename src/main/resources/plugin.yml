@@ -1,0 +1,26 @@
+﻿name: ${project.name}
+version: ${project.version}
+main: gg.newearth.Main
+api-version: 1.17
+authors: [ Irochi_, IJustGotKarma ]
+description: ${project.description}
+website: ${project.url}
+depend:
+permissions:
+commands:
+  say:
+    description: NewEarth Broadcast Command
+    permission: newearth.broadcast
+    permission-message: §cYou dont have permission to run this command!
+  recipes:
+    description: NewEarth recipes command
+  rules:
+    description: NewEarth rules command
+  store:
+    description: NewEarth store command
+  map:
+    description: NewEarth map command
+  combattag:
+    description: NewEarth combattag command
+    permission: newearth.combattag
+    permission-message: §cYou dont have permission to run this command!
