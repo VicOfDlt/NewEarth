@@ -67,7 +67,7 @@ public final class Main extends JavaPlugin {
 //        getServer().getPluginManager().registerEvents(new SunlightListener(), this);
         getServer().getPluginManager().registerEvents(new SiegeZoneListener(), this);
         getServer().getPluginManager().registerEvents(new CombatListener(), this);
-        getServer().getPluginManager().registerEvents(new FurnaceBurnListener(), this);
+        //getServer().getPluginManager().registerEvents(new FurnaceBurnListener(), this);
         getServer().getPluginManager().registerEvents(new AnimalKillListener(), this);
         getServer().getPluginManager().registerEvents(new OccupiedTownTaxListener(), this);
 
