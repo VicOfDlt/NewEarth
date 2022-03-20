@@ -2,7 +2,7 @@
 version: ${project.version}
 main: gg.newearth.Main
 api-version: 1.17
-authors: [ Irochi_, IJustGotKarma ]
+authors: [ Irochi_, IJustGotKarma, xDgf ]
 description: ${project.description}
 website: ${project.url}
 depend:
@@ -20,6 +20,8 @@ commands:
     description: NewEarth store command
   map:
     description: NewEarth map command
+  website:
+    description: NewEarth website command
   combattag:
     description: NewEarth combattag command
     permission: newearth.combattag
