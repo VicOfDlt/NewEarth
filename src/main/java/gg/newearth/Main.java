@@ -70,6 +70,7 @@ public final class Main extends JavaPlugin {
         //getServer().getPluginManager().registerEvents(new FurnaceBurnListener(), this);
         getServer().getPluginManager().registerEvents(new AnimalKillListener(), this);
         getServer().getPluginManager().registerEvents(new OccupiedTownTaxListener(), this);
+        getServer().getPluginManager().registerEvents(new CreatureSpawnListener(), this);
 
         new BukkitRunnable() {
             public void run() {
