@@ -71,6 +71,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AnimalKillListener(), this);
         getServer().getPluginManager().registerEvents(new OccupiedTownTaxListener(), this);
         getServer().getPluginManager().registerEvents(new CreatureSpawnListener(), this);
+        getServer().getPluginManager().registerEvents(new GrindstoneListener(), this);
 
         new BukkitRunnable() {
             public void run() {
