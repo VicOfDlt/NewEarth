@@ -64,12 +64,12 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CropXPListener(), this);
         getServer().getPluginManager().registerEvents(new EXPBottleListener(), this);
         getServer().getPluginManager().registerEvents(new VillagerEggCraftListener(), this);
-//        getServer().getPluginManager().registerEvents(new SunlightListener(), this);
+        //getServer().getPluginManager().registerEvents(new SunlightListener(), this);
         getServer().getPluginManager().registerEvents(new SiegeZoneListener(), this);
         getServer().getPluginManager().registerEvents(new CombatListener(), this);
         //getServer().getPluginManager().registerEvents(new FurnaceBurnListener(), this);
         getServer().getPluginManager().registerEvents(new AnimalKillListener(), this);
-        getServer().getPluginManager().registerEvents(new OccupiedTownTaxListener(), this);
+        //getServer().getPluginManager().registerEvents(new OccupiedTownTaxListener(), this);
         getServer().getPluginManager().registerEvents(new CreatureSpawnListener(), this);
 
         new BukkitRunnable() {
