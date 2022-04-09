@@ -63,7 +63,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new VillagerListener(), this);
         getServer().getPluginManager().registerEvents(new CropXPListener(), this);
         getServer().getPluginManager().registerEvents(new EXPBottleListener(), this);
-        getServer().getPluginManager().registerEvents(new VillagerEggCraftListener(), this);
+        //getServer().getPluginManager().registerEvents(new VillagerEggCraftListener(), this);
         //getServer().getPluginManager().registerEvents(new SunlightListener(), this);
         getServer().getPluginManager().registerEvents(new SiegeZoneListener(), this);
         getServer().getPluginManager().registerEvents(new CombatListener(), this);
@@ -95,5 +95,6 @@ public final class Main extends JavaPlugin {
 
     private void runTasks() {
         new BossBarTask().runTaskTimer(this, 10, 10);
+        new MobSpawnLimiter().runTaskTimer(this, 20, 20);
     }
 }

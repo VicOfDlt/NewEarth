@@ -31,24 +31,24 @@ public class VillagerListener implements Listener {
 
     private static final int VILLAGER_LIFESPAN = 15;
 
-    @EventHandler(ignoreCancelled = true)
-    public void onVillagerCured(EntityTransformEvent ev) {
-        if (ev.getTransformReason() == EntityTransformEvent.TransformReason.CURED) {
-            ev.setCancelled(true);
-        }
-    }
+    //EventHandler(ignoreCancelled = true)
+    //public void onVillagerCured(EntityTransformEvent ev) {
+    //    if (ev.getTransformReason() == EntityTransformEvent.TransformReason.CURED) {
+    //        ev.setCancelled(true);
+    //    }
+    //}
 
     @EventHandler(ignoreCancelled = true)
     public void onRightClickVillager(PlayerInteractEntityEvent ev) throws ParseException {
         Player player = ev.getPlayer();
-        if (ev.getRightClicked().getType() == EntityType.ZOMBIE_VILLAGER) {
-            if (player.getInventory().getItemInMainHand().getType() == Material.GOLDEN_APPLE) {
-                player.sendMessage(ChatColor.RED + "Zombie villager curing is disabled on NewEarth. You can craft villager spawn eggs with gold blocks. Use "
-                        + ChatColor.AQUA + " /recipes" + ChatColor.RED + " to view our other custom crafting recipes.");
-                ev.setCancelled(true);
-                return;
-            }
-        }
+        //if (ev.getRightClicked().getType() == EntityType.ZOMBIE_VILLAGER) {
+        //    if (player.getInventory().getItemInMainHand().getType() == Material.GOLDEN_APPLE) {
+        //        player.sendMessage(ChatColor.RED + "Zombie villager curing is disabled on NewEarth. You can craft villager spawn eggs with gold blocks. Use "
+        //                + ChatColor.AQUA + " /recipes" + ChatColor.RED + " to view our other custom crafting recipes.");
+        //        ev.setCancelled(true);
+        //        return;
+        //    }
+        //}
 
         if (ev.getRightClicked().getType() == EntityType.VILLAGER) {
             Villager villager = (Villager) ev.getRightClicked();
@@ -94,19 +94,19 @@ public class VillagerListener implements Listener {
         if (ev.getEntityType() != EntityType.VILLAGER)
             return;
 
-        if (ev.getSpawnReason() == CreatureSpawnEvent.SpawnReason.BREEDING) {
-            ev.setCancelled(true);
-            return;
-        }
+        //if (ev.getSpawnReason() == CreatureSpawnEvent.SpawnReason.BREEDING) {
+        //    ev.setCancelled(true);
+        //    return;
+        //}
 
         Villager villager = (Villager) ev.getEntity();
         villager.getPersistentDataContainer().set(new NamespacedKey(Main.getInstance(), "spawn_date"),
                 PersistentDataType.STRING, TimeUtility.getCurrentDateStringFormat());
     }
 
-    @EventHandler(ignoreCancelled = true)
-    public void onVillagerBreed(EntityBreedEvent ev) {
-        if (ev.getEntity().getType() == EntityType.VILLAGER)
-            ev.setCancelled(true);
-    }
+    //@EventHandler(ignoreCancelled = true)
+    //public void onVillagerBreed(EntityBreedEvent ev) {
+    //    if (ev.getEntity().getType() == EntityType.VILLAGER)
+    //        ev.setCancelled(true);
+    //}
 }
