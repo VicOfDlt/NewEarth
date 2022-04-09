@@ -40,7 +40,7 @@ public class EXPBottleListener implements Listener {
 
         event.setCancelled(true);
 
-        player.giveExp(-16);
+        player.giveExp(-7);
         item.setAmount(item.getAmount() - 1);
         player.getInventory().addItem(new ItemStack(Material.EXPERIENCE_BOTTLE)).values().forEach(leftover -> dropItem(player, leftover));
     }
