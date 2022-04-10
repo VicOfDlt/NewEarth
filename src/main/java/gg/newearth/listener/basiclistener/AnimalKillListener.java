@@ -1,5 +1,6 @@
 package gg.newearth.listener.basiclistener;
 
+import gg.newearth.Main;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -15,8 +16,8 @@ public class AnimalKillListener implements Listener {
 
         Player player = ev.getEntity().getKiller();
         switch (ev.getEntityType()) {
-            case PIG, COW, SHEEP -> player.giveExp(2);
-            case CHICKEN -> player.giveExp(1);
+            case PIG, COW, SHEEP -> player.giveExp(Main.getInstance().getConfig().getInt("PIG_COW_SHEEP_XP"));
+            case CHICKEN -> player.giveExp(Main.getInstance().getConfig().getInt("CHICKENXP"));
         }
     }
 }

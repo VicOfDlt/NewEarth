@@ -14,6 +14,7 @@ import gg.newearth.listener.townylistener.SiegeZoneListener;
 import gg.newearth.listener.townylistener.TownyExploitListener;
 import gg.newearth.listener.townylistener.VillagerDeathListener;
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -38,12 +39,11 @@ public final class Main extends JavaPlugin {
     public CombatHandler getCombatHandler() {
         return combatHandler;
     }
-
     @Override
     public void onEnable() {
         instance = this;
         log.info(PREFIX + "Hi everyone!");
-
+        saveDefaultConfig();
         this.getCommand("say").setExecutor(new SayCommand());
         this.getCommand("recipes").setExecutor(new BasicCommand());
         this.getCommand("rules").setExecutor(new BasicCommand());
@@ -63,13 +63,9 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new VillagerListener(), this);
         getServer().getPluginManager().registerEvents(new CropXPListener(), this);
         getServer().getPluginManager().registerEvents(new EXPBottleListener(), this);
-        //getServer().getPluginManager().registerEvents(new VillagerEggCraftListener(), this);
-        //getServer().getPluginManager().registerEvents(new SunlightListener(), this);
         getServer().getPluginManager().registerEvents(new SiegeZoneListener(), this);
         getServer().getPluginManager().registerEvents(new CombatListener(), this);
-        //getServer().getPluginManager().registerEvents(new FurnaceBurnListener(), this);
         getServer().getPluginManager().registerEvents(new AnimalKillListener(), this);
-        //getServer().getPluginManager().registerEvents(new OccupiedTownTaxListener(), this);
         getServer().getPluginManager().registerEvents(new CreatureSpawnListener(), this);
 
         new BukkitRunnable() {
@@ -97,4 +93,5 @@ public final class Main extends JavaPlugin {
         new BossBarTask().runTaskTimer(this, 10, 10);
         new MobSpawnLimiter().runTaskTimer(this, 20, 20);
     }
+
 }

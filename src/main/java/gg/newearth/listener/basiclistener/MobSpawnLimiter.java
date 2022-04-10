@@ -8,18 +8,18 @@ import org.bukkit.World;
 import org.bukkit.GameRule;
 
 public class MobSpawnLimiter extends BukkitRunnable {
-
+    private final int TPS = Main.getInstance().getConfig().getInt("MOB_SPAWNING_TPS");
     @Override
     public void run() {
 
-        if (Bukkit.getTPS()[1] < 18) {
+        if (Bukkit.getTPS()[1] < TPS) {
             for (World world: Bukkit.getWorlds()) {
                 if (world.getGameRuleValue(GameRule.DO_MOB_SPAWNING) == true){
                     world.setGameRule(GameRule.DO_MOB_SPAWNING, false);
                     Bukkit.broadcastMessage(Main.PREFIX + "Mob spawning has " + ChatColor.RED + "Disabled.");
                 }
             }
-        } else if (Bukkit.getTPS()[1] > 18) {
+        } else if (Bukkit.getTPS()[1] > TPS) {
             for (World world: Bukkit.getWorlds()) {
                 if (world.getGameRuleValue(GameRule.DO_MOB_SPAWNING) == false){
                     world.setGameRule(GameRule.DO_MOB_SPAWNING, true);

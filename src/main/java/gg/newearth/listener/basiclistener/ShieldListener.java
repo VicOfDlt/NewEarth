@@ -1,5 +1,6 @@
 package gg.newearth.listener.basiclistener;
 
+import gg.newearth.Main;
 import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.EntityType;
@@ -11,7 +12,7 @@ import org.bukkit.projectiles.ProjectileSource;
 
 public class ShieldListener implements Listener {
 
-    private static final short SHIELD_COOLDOWN = 3;
+    private static final short SHIELD_COOLDOWN = (short) Main.getInstance().getConfig().getInt("SHIELD_COOLDOWN");
 
     @EventHandler(ignoreCancelled = true)
     public void onEntityDamageByEntity(EntityDamageByEntityEvent ev) {
