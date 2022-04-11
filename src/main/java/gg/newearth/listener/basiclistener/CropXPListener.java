@@ -1,5 +1,6 @@
 package gg.newearth.listener.basiclistener;
 
+import gg.newearth.Main;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Ageable;
@@ -21,7 +22,7 @@ public class CropXPListener implements Listener {
             if (ageable.getAge() == ageable.getMaximumAge()) {
                 int randomInt = ThreadLocalRandom.current().nextInt(4) + 1;
                 if (randomInt == 1) {
-                    ev.getPlayer().giveExp(1);
+                    ev.getPlayer().giveExp(Main.getInstance().getConfig().getInt("CROPXP"));
                 }
             }
         }

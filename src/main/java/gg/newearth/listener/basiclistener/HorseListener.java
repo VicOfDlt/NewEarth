@@ -9,7 +9,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class HorseListener implements Listener {
 
-    private static final double DAMAGE_REDUCTION = 0.7;
+    private static final double DAMAGE_REDUCTION = Main.getInstance().getConfig().getDouble("HORSE_DAMAGE_REDUCTION");
 
     @EventHandler(ignoreCancelled = true)
     public void onHorseDamage(EntityDamageEvent ev) {

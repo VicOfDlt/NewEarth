@@ -29,7 +29,7 @@ import java.util.*;
 
 public class VillagerListener implements Listener {
 
-    private static final int VILLAGER_LIFESPAN = 15;
+    private static final int VILLAGER_LIFESPAN = Main.getInstance().getConfig().getInt("VILLAGER_LIFESPAN");
 
     //EventHandler(ignoreCancelled = true)
     //public void onVillagerCured(EntityTransformEvent ev) {

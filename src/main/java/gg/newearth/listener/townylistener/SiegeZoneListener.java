@@ -79,28 +79,9 @@ public class SiegeZoneListener implements Listener {
         if (type == null || !type.isBlock()) {
             return false;
         }
-        switch (type) {
-            case DISPENSER:
-            case NOTE_BLOCK:
-            case CRAFTING_TABLE:
-            case FURNACE:
-            case BLAST_FURNACE:
-            case JUKEBOX:
-            case CAKE:
-            case ENCHANTING_TABLE:
-            case BREWING_STAND:
-            case BEACON:
-            case ANVIL:
-            case HOPPER:
-            case DROPPER:
-            case FLETCHING_TABLE:
-            case LECTERN:
-            case CARTOGRAPHY_TABLE:
-            case CHEST:
-            case TRAPPED_CHEST:
-                return true;
-            default:
-                return false;
-        }
+        return switch (type) {
+            case DISPENSER, NOTE_BLOCK, CRAFTING_TABLE, FURNACE, BLAST_FURNACE, JUKEBOX, CAKE, ENCHANTING_TABLE, BREWING_STAND, BEACON, ANVIL, HOPPER, DROPPER, FLETCHING_TABLE, LECTERN, CARTOGRAPHY_TABLE, CHEST, TRAPPED_CHEST -> true;
+            default -> false;
+        };
     }
 }

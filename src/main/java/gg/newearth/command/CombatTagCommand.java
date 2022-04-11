@@ -20,18 +20,10 @@ public class CombatTagCommand implements CommandExecutor {
 
 
         switch (args[0]) {
-            case "help":
-                showHelp(sender);
-                break;
-            case "tag":
-                parseTagCommand(sender, args);
-                break;
-            case "untag":
-                parseUntagCommand(sender, args);
-                break;
-            default:
-                sender.sendMessage("§7[§bCombatTag§7]: §eIncorrect Usage: §e/combattag help");
-                break;
+            case "help" -> showHelp(sender);
+            case "tag" -> parseTagCommand(sender, args);
+            case "untag" -> parseUntagCommand(sender, args);
+            default -> sender.sendMessage("§7[§bCombatTag§7]: §eIncorrect Usage: §e/combattag help");
         }
         return true;
     }

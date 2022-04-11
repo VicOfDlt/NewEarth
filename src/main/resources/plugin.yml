@@ -5,7 +5,7 @@ api-version: 1.17
 authors: [ Irochi_, IJustGotKarma, xDgf ]
 description: ${project.description}
 website: ${project.url}
-depend:
+depend: [Towny, TownyChat]
 permissions:
 commands:
   say:

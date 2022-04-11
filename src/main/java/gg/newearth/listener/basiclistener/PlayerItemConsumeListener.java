@@ -1,5 +1,6 @@
 package gg.newearth.listener.basiclistener;
 
+import gg.newearth.Main;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -8,7 +9,7 @@ import org.bukkit.event.player.PlayerItemConsumeEvent;
 
 public class PlayerItemConsumeListener implements Listener {
 
-    private static final short GAPPLE_COOLDOWN_SECONDS = 10;
+    private static final short GAPPLE_COOLDOWN_SECONDS = (short) Main.getInstance().getConfig().getInt("GAPPLE_COOLDOWN_SECONDS");
 
     @EventHandler(ignoreCancelled = true)
     public void onGoldenAppleConsume(PlayerItemConsumeEvent ev) {

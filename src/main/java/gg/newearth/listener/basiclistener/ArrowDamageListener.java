@@ -1,5 +1,6 @@
 package gg.newearth.listener.basiclistener;
 
+import gg.newearth.Main;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -10,7 +11,7 @@ import org.bukkit.projectiles.ProjectileSource;
 
 public class ArrowDamageListener implements Listener {
 
-    private static final double DAMAGE_INCREASE = 1.25;
+    private static final double DAMAGE_INCREASE = Main.getInstance().getConfig().getDouble("ARROW_DAMAGE_INCREASE");
 
     @EventHandler(ignoreCancelled = true)
     public void onArrowHit(EntityDamageByEntityEvent ev) {
