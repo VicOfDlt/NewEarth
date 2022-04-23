@@ -16,7 +16,7 @@ public class CreatureSpawnListener implements Listener {
 
     public boolean checkEntity(Entity e){
         return switch (e.getType()) {
-            case BAT, COD, LLAMA, TRADER_LLAMA, VEX, ENDERMITE, MULE, DONKEY, POLAR_BEAR -> true;
+            case BAT, COD, LLAMA, TRADER_LLAMA, VEX, ENDERMITE, MULE, DONKEY, POLAR_BEAR, SQUID, PHANTOM -> true;
             default -> false;
         };
     }
