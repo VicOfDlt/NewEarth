@@ -68,6 +68,7 @@ public final class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AnimalKillListener(), this);
         getServer().getPluginManager().registerEvents(new CreatureSpawnListener(), this);
         getServer().getPluginManager().registerEvents(new TNTMinecartDamageListener(), this);
+        getServer().getPluginManager().registerEvents(new ArmorDamageListener(), this);
 
         new BukkitRunnable() {
             public void run() {
